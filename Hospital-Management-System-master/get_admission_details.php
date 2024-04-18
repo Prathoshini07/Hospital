@@ -58,7 +58,7 @@
             else
             {
                 echo "<h3>Connection Successful</h3><br/>";
-                $sql="INSERT INTO `patient_details` (`pid`, `hid`, `aid`, `a_date`, `d_date`, `wno`, `bed_type`) VALUES ('$pid', '$hid', '$aid', '$a_date', '$d_date', '$wno', '$bed_type')";
+                $sql="INSERT INTO `admission` (`pid`, `aid`, `hid`, `a_date`, `d_date`, `wno`, `bed_type`) VALUES ('$pid', '$aid', '$hid', '$a_date', '$d_date', '$wno', '$bed_type')";
                 $result=mysqli_query($conn,$sql);
 
                 if(!$result)
