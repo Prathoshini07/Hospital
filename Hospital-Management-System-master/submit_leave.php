@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssss", $employeeName, $employeeId, $leaveType, $startDate, $endDate, $reason);
 
     if ($stmt->execute() === TRUE) {
-        echo "Leave request submitted successfully";
+        header("Location: doctormenu.php");
     } else {
         echo "Error: " . $stmt->error;
     }

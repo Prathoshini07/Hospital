@@ -5,64 +5,64 @@
             function validate(event)
             {
                 //event.preventDefault();
-                alert("Called !");
+                //alert("Called !");
                 var flag=0;
 
                 var hid=document.querySelector("#hid").value;
-                alert(hid);
+                //alert(hid);
                 const hid_pattern=/^[0-9]{1,}$/;
                 if(hid_pattern.test(hid))
                 {
-                    alert("if hid");
+                    //alert("if hid");
                     document.querySelector("#hid").style.border="2px solid green";
                     flag=flag+1;
                 }
                 else
                 {
-                    alert("else hid");
+                    //alert("else hid");
                     document.querySelector("#hid").style.border="2px solid red";
                     document.querySelector("#msg1").innerHTML="INVALID HOSPITAL ID";
                     document.querySelector("#msg1").style.color="red";
                 }
 
                 var pid=document.querySelector("#pid").value;
-                alert(pid);
+                //alert(pid);
                 const pid_pattern=/^[0-9]{1,}$/;
                 if(pid_pattern.test(pid))
                 {
-                    alert("if pid");
+                    //alert("if pid");
                     document.querySelector("#pid").style.border="2px solid green";
                     flag=flag+1;
                 }
                 else
                 {
-                    alert("else pid");
+                    //alert("else pid");
                     document.querySelector("#pid").style.border="2px solid red";
                     document.querySelector("#msg0").innerHTML="INVALID PATIENT ID";
                     document.querySelector("#msg0").style.color="red";
                 }
 
                 var app_id=document.querySelector("#app_id").value;
-                alert(app_id);
+                //alert(app_id);
                 const app_id_pattern=/^[0-9]{1,}$/;
                 if(app_id_pattern.test(app_id))
                 {
-                    alert("if app_id");
+                    //alert("if app_id");
                     document.querySelector("#app_id").style.border="2px solid green";
                     flag=flag+1;
                 }
                 else
                 {
-                    alert("else app_id");
+                    //alert("else app_id");
                     document.querySelector("#app_id").style.border="2px solid red";
                     document.querySelector("#msg2").innerHTML="INVALID APPOINTMENT ID";
                     document.querySelector("#msg2").style.color="red";
                 }
-                alert("FLAG : "+flag);
+                //alert("FLAG : "+flag);
 
                 if(flag==3)
                 {
-                    alert("Success .")
+                    //alert("Success .")
                     return true;
                 }
 

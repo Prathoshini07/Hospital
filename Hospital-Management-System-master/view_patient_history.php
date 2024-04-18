@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to retrieve patient details
-$sql = "SELECT * FROM appointment";
+$sql = "SELECT * FROM inpatient";
 $result = $conn->query($sql);
 
 // Close connection
@@ -37,8 +37,10 @@ $conn->close();
                 <tr>
                     <th>ID</th>
                     <th>Patient ID</th>
-                    <th>Doctor ID</th>
-                    <th>Time</th>
+                    <th>Admission Date</th>
+                    <th>Discharge Date</th>
+                    <th>Ward Number</th>
+                    <th>Bed Type</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,14 +48,16 @@ $conn->close();
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . $row["app_id"] . "</td>";
+                        echo "<td>" . $row["id"] . "</td>";
                         echo "<td>" . $row["pid"] . "</td>";
-                        echo "<td>" . $row["doc_id"] . "</td>";
-                        echo "<td>" . $row["time"] . "</td>";
+                        echo "<td>" . $row["a_date"] . "</td>";
+                        echo "<td>" . $row["d_date"] . "</td>";
+                        echo "<td>" . $row["wno"] . "</td>";
+                        echo "<td>" . $row["bed_type"] . "</td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='7'>No appointments</td></tr>";
+                    echo "<tr><td colspan='7'>No patient details found</td></tr>";
                 }
                 ?>
             </tbody>
@@ -61,5 +65,3 @@ $conn->close();
     </div>
 </body>
 </html>
-
-
